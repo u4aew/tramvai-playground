@@ -1,0 +1,67 @@
+{
+  "name": "new-app",
+  "private": true,
+  "scripts": {
+    "start": "tramvai start new-app",
+    "build": "tramvai build new-app",
+    "preview": "tramvai start-prod new-app",
+    "analyze": "tramvai analyze new-app",
+    "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "test:integration": "jest -w=3 --config ./jest.integration.config.ts",
+    "test:integration:watch": "jest --runInBand --watch --config ./jest.integration.config.ts"
+  },
+  "dependencies": {
+    "@tramvai/core": "^3.40.44",
+    "@tramvai/module-common": "^3.40.44",
+    "@tramvai/module-error-interceptor": "^3.40.44",
+    "@tramvai/module-render": "^3.40.44",
+    "@tramvai/module-router": "^3.40.44",
+    "@tramvai/module-seo": "^3.40.44",
+    "@tramvai/module-server": "^3.40.44",
+    "@tramvai/react": "^3.40.44",
+    "@tramvai/state": "^3.40.44",
+    "@tramvai/tokens-render": "^3.40.44",
+    "@tramvai/tokens-router": "^3.40.44",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tslib": "^2.6.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.0.0",
+    "@tinkoff/eslint-config": "^4.1.1",
+    "@tinkoff/eslint-config-react": "^4.1.1",
+    "@tinkoff/eslint-plugin-tramvai": "^0.6.7",
+    "@tramvai/cli": "^3.40.44",
+    "@tramvai/test-integration": "^3.40.44",
+    "@tramvai/test-integration-jest": "^3.40.44",
+    "@tramvai/test-react": "^3.40.44",
+    "@tramvai/test-unit": "^3.40.44",
+    "@tramvai/test-unit-jest": "^3.40.44",
+    "@types/jest": "^29.5.12",
+    "@types/react": "^18.3.3",
+    "husky": "^4.3.8",
+    "jest": "^29.7.0",
+    "jest-circus": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^15.2.7",
+    "postcss-custom-media": "^10.0.6",
+    "postcss-custom-properties": "^13.3.10",
+    "postcss-modules-values-replace": "^4.2.0",
+    "postcss-nested": "^6.0.1",
+    "prettier-config-tinkoff": "^0.2.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2"
+  }
+}
